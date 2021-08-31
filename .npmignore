@@ -1,0 +1,14 @@
+# Same as gitignore
+.DS_Store
+/node_modules/
+/lib/
+.bsb.lock
+.merlin
+/build/
+docs/
+
+# Added
+.editorconfig
+/test/
+
+# Removed from gitignore - /src/**/*.mjs

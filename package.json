@@ -1,11 +1,11 @@
 {
-  "name": "res-suspenders",
-  "version": "0.0.1",
+  "name": "@sminnee/res-suspenders",
+  "version": "0.0.2",
   "scripts": {
     "start": "rescript && node src/index.mjs",
     "dev": "rescript build -w",
     "clean": "rescript clean",
-    "build": "rm -rf build/ && rescript clean && rescript build && snowpack --config snowpack.prod.config.js build",
+    "build": "rescript build",
     "test": "rescript && mocha",
     "test-watch": "mocha --watch --parallel",
     "format": "rescript format src/**/*.res"
@@ -14,16 +14,17 @@
     "format"
   ],
   "keywords": [
-    "rescript"
+    "rescript",
+    "bucklescript"
   ],
-  "author": "",
-  "license": "LicenseRef-LICENSE.md",
+  "author": "Sam Minnée <sam.minnee@gmail.com>",
+  "license": "MIT",
   "devDependencies": {
     "chai": "^4.3.4",
     "mocha": "^9.0.2",
     "pre-commit": "^1.2.2"
   },
   "dependencies": {
-    "rescript": "^9.1.2"
+    "rescript": "^9"
   }
 }

@@ -4,9 +4,5 @@
 .bsb.lock
 .merlin
 /build/
-*.bs.js
 /src/**/*.mjs
 /test/**/*.mjs
-docs/
-legacy/
-bin/github-deploy.key
