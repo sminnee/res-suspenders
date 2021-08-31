@@ -1,6 +1,6 @@
 {
   "name": "@sminnee/res-suspenders",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "scripts": {
     "start": "rescript && node src/index.mjs",
     "dev": "rescript build -w",

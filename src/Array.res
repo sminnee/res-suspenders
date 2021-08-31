@@ -12,6 +12,8 @@ let sortInPlaceWith = Js.Array2.sortInPlaceWith
 
 let filter = Js.Array2.filter
 
+let findIndex = Js.Array2.findIndex
+
 // @ocaml.doc("Return the a relative value in an array")
 let relValue = (arr, offset, val) =>
   switch getIndexBy(arr, x => x == val) {
@@ -81,7 +83,7 @@ let has = (arr, val) => getIndexBy(arr, x => x == val)->Option.isSome
 let diff = (arr, vals) => keep(arr, x => !has(vals, x))
 
 @ocaml.doc("Immutable array set")
-let set = (arr, idx, val) =>
+let withIdx = (arr, idx, val) =>
   mapWithIndex(arr, (curIdx, curVal) => idx == curIdx ? val : curVal)
 
 @ocaml.doc("Map over the given array, dropping any value with none")
