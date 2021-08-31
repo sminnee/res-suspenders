@@ -1,7 +1,6 @@
 # Same as gitignore
 .DS_Store
 /node_modules/
-/lib/
 .bsb.lock
 .merlin
 /build/
@@ -11,4 +10,4 @@ docs/
 .editorconfig
 /test/
 
-# Removed from gitignore - /src/**/*.mjs
+# Removed from gitignore - /src/**/*.mjs, /lib
