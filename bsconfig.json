@@ -1,0 +1,24 @@
+{
+  "name": "res-suspenders",
+  "namespace": "Suspenders",
+  "version": "0.0.1",
+  "sources": [
+    {"dir" : "src", "subdirs" : true},
+    {"dir" : "test", "subdirs" : true, "type": "dev"}
+  ],
+  "package-specs": {
+    "module": "es6",
+    "in-source": true
+  },
+  "suffix": ".mjs",
+  "bs-dependencies": [
+  ],
+  "bs-dev-dependencies": [
+  ],
+  "warnings": {
+    "error" : "+101"
+  },
+  "reason": {
+    "react-jsx": 3
+  }
+}
