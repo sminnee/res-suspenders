@@ -1,7 +1,7 @@
 {
   "name": "@sminnee/res-suspenders",
   "namespace": "Suspenders",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "sources": [
     {"dir" : "src", "subdirs" : true},
     {"dir" : "test", "subdirs" : true, "type": "dev"}
