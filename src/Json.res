@@ -36,6 +36,12 @@ module Read = {
     | _ => raise(ParseException("Number expected"))
     }
 
+  let float = taggedJson =>
+    switch taggedJson {
+    | JSONNumber(num) => num
+    | _ => raise(ParseException("Number expected"))
+    }
+
   let bool = taggedJson =>
     switch taggedJson {
     | JSONTrue => true
