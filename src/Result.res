@@ -3,15 +3,13 @@ include Belt.Result
 let combineErrors = (a, b) =>
   Belt.Array.concat(a, Js.Array2.filter(b, bVal => Js.Array2.indexOf(a, bVal) == -1))
 
-
 @ocaml.doc("Combine 2 results into a tuple or pass back the existing error lists.")
 let combine2 = (a, b) =>
   switch (a, b) {
   | (Ok(val1), Ok(val2)) => Ok((val1, val2))
   | (Error(message), Ok(_)) => Error(message)
   | (Ok(_), Error(message)) => Error(message)
-  | (Error(message1), Error(message2)) =>
-    Error(combineErrors(message1, message2))
+  | (Error(message1), Error(message2)) => Error(combineErrors(message1, message2))
   }
 
 @ocaml.doc("Combine 3 results into a tuple or pass back the existing error lists.")
@@ -36,14 +34,12 @@ let fromOption = (optX, err) =>
   | None => Error(err)
   }
 
-
 @ocaml("Convert a result to an option")
 let toOption = res =>
   switch res {
   | Ok(x) => Some(x)
   | Error(_) => None
   }
-
 
 @ocaml.doc("Map individual error messages")
 let mapMessage = (result, updater) =>

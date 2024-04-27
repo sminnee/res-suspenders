@@ -35,7 +35,6 @@ let bubbleError = map => {
   )
 }
 
-
 @ocaml.doc("Generate a Map.String from an array, using a mapping function to generate keys")
 let fromArrayDerivingKeys = (arr, keyFn) => Array.map(arr, val => (keyFn(val), val))->fromArray
 
@@ -54,6 +53,4 @@ let combine_intersect = (mapA, mapB) =>
   "Combine 2 maps with matching keys into a map of tuples. Keys of first map are used; 2nd element is an option"
 )
 let combine = (mapA, mapB) =>
-  reduce(mapA, empty, (accum, k, vA) =>
-    set(accum, k, (vA, get(mapB, k)))
-  )
+  reduce(mapA, empty, (accum, k, vA) => set(accum, k, (vA, get(mapB, k))))

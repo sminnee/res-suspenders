@@ -1,6 +1,6 @@
 {
   "name": "@sminnee/res-suspenders",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "scripts": {
     "start": "rescript && node src/index.mjs",
     "dev": "rescript build -w",
@@ -8,7 +8,7 @@
     "build": "rescript build",
     "test": "rescript && mocha",
     "test-watch": "mocha --watch --parallel",
-    "format": "rescript format src/**/*.res"
+    "format": "rescript format src/*.res"
   },
   "pre-commit": [
     "format"
@@ -25,6 +25,6 @@
     "pre-commit": "^1.2.2"
   },
   "dependencies": {
-    "rescript": "^9"
+    "rescript": "^11"
   }
 }

@@ -64,7 +64,7 @@ module Read = {
   let map = (taggedJson, mapper) =>
     switch taggedJson {
     | JSONObject(dict) =>
-      Js.Dict.map((. json) => json->classify->mapper, dict)->Js.Dict.entries->StrMap.fromArray
+      Js.Dict.map(json => json->classify->mapper, dict)->Js.Dict.entries->StrMap.fromArray
     | _ => raise(ParseException("expected a JSON object"))
     }
 
@@ -91,14 +91,14 @@ module Write = {
     Some(key, mapper(value))
   }
 
-  let array = Js.Json.array
-  let number = Js.Json.number
-  let string = Js.Json.string
-  let stringArray = Js.Json.stringArray
-  let object_ = Js.Json.object_
-  let boolean = Js.Json.boolean
+  let array = Js.Json.array(_)
+  let number = Js.Json.number(_)
+  let string = Js.Json.string(_)
+  let stringArray = Js.Json.stringArray(_)
+  let object_ = Js.Json.object_(_)
+  let boolean = Js.Json.boolean(_)
 
-  let stringify = Js.Json.stringify
+  let stringify = Js.Json.stringify(_)
 
   let mappedArray = (mapper, arr) => arr->Array.map(mapper)->array
 

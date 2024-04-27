@@ -1,4 +1,3 @@
-
 @ocaml.doc("Log the execution time of an operation to the console")
 let duration = (label, operation: unit => 'a): 'a => {
   let t1 = Js.Date.now()

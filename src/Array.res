@@ -54,7 +54,7 @@ let push = (arr, val) => concat(arr, [val])
 @ocaml.doc("Immutable array pop")
 let pop = arr => {
   let len = length(arr)
-  get(arr,len - 1)->Option.mapWithDefault((arr, None), last => (
+  get(arr, len - 1)->Option.mapWithDefault((arr, None), last => (
     slice(arr, ~offset=0, ~len=len - 1),
     Some(last),
   ))
@@ -73,8 +73,7 @@ let unshift = (arr, val) => concat([val], arr)
 let remove = (arr, val) => keep(arr, x => x != val)
 
 @ocaml.doc("Remove an item from an array by index")
-let removeIdx = (arr, idx) =>
-  concat(slice(arr, ~offset=0, ~len=idx), sliceToEnd(arr, idx + 1))
+let removeIdx = (arr, idx) => concat(slice(arr, ~offset=0, ~len=idx), sliceToEnd(arr, idx + 1))
 
 @ocaml.doc("Does the array contain the given value")
 let has = (arr, val) => getIndexBy(arr, x => x == val)->Option.isSome
@@ -83,8 +82,7 @@ let has = (arr, val) => getIndexBy(arr, x => x == val)->Option.isSome
 let diff = (arr, vals) => keep(arr, x => !has(vals, x))
 
 @ocaml.doc("Immutable array set")
-let withIdx = (arr, idx, val) =>
-  mapWithIndex(arr, (curIdx, curVal) => idx == curIdx ? val : curVal)
+let withIdx = (arr, idx, val) => mapWithIndex(arr, (curIdx, curVal) => idx == curIdx ? val : curVal)
 
 @ocaml.doc("Map over the given array, dropping any value with none")
 let filterMap = (arr, fn) =>
@@ -94,7 +92,6 @@ let filterMap = (arr, fn) =>
     | Some(result) => push(accum, result)
     }
   )
-
 
 @ocaml.doc("Turn an array of results into a result of an array. The first error will be returned")
 let bubbleError = map =>
@@ -108,7 +105,6 @@ let bubbleError = map =>
     | _ => resAccum
     }
   )
-
 
 @ocaml.doc("Simple array formatter for signatures")
 let toSExpr = arr => reduce(arr, "(", (acc, val) => acc ++ " " ++ val) ++ " )"
