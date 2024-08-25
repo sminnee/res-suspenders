@@ -25,6 +25,6 @@
     "pre-commit": "^1.2.2"
   },
   "dependencies": {
-    "rescript": "^11"
+    "rescript": "^11.1.3"
   }
 }
