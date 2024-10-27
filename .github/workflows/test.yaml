@@ -1,0 +1,48 @@
+name: Test
+
+on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - .editorconfig
+      - .gitignore
+      - README.md
+      - LICENSE.md
+  pull_request:
+    branches:
+      - main
+    paths-ignore:
+      - .editorconfig
+      - .gitignore
+      - README.md
+      - LICENSE.md
+
+jobs:
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@master
+
+      - name: Use Node.js 20.x
+        uses: actions/setup-node@master
+        with:
+          node-version: 20.x
+
+      - name: Cache node package cache
+        uses: actions/cache@master
+        with:
+          path: |
+            ~/.cache
+          key: ${{ runner.os }}-${{ hashFiles('package-lock.json') }}
+
+      - name: Install
+        run: npm clean-install
+
+      - name: Test build
+        run: npm run build
+
+      - name: Test
+        run: npm run test
