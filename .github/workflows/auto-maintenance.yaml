@@ -47,4 +47,5 @@ jobs:
           title: Update NPM packages
           body: NPM lockfile updated
           base: main
+          assignees: sminnee
           token: ${{ secrets.MAINTENANCE_GITHUB_TOKEN }}
